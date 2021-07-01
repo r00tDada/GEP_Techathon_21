@@ -281,6 +281,9 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
 <script>
   var lang_choose;
 
+  function displayAlert() {
+    return window.confirm("Submitting details?!")
+  }
 
   // for changing html value
 
@@ -328,10 +331,6 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
       });
 
     });
-
-    function displayAlert() {
-      window.confirm("Are you sure about the details provided? Check once before Submitting!!")
-    }
 
   }
 </script>
