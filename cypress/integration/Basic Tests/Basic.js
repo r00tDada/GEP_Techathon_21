@@ -2,20 +2,20 @@
 
 describe('Basic Tests', () => {
 
-    beforeEach(function(){
+    beforeEach(function () {
 
         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
-        
+
         cy.fixture('culture').then((culture) => {
 
-            for(var language in culture){
+            for (var language in culture) {
 
                 var selectedLanguage = cy.get('#country')
 
-                if(selectedLanguage.should('have.value', language)){
+                if (selectedLanguage.should('have.value', language)) {
 
-                    cy.fixture(culture[language].toString().toLowerCase()).then((currentLanguage)=>{
-                        this.cul=currentLanguage
+                    cy.fixture(culture[language].toString().toLowerCase()).then((currentLanguage) => {
+                        this.cul = currentLanguage
                     })
 
                     break
@@ -24,36 +24,41 @@ describe('Basic Tests', () => {
         })
     })
 
-    it('Home Page Loading Test', function() {
+    it('Home Page Loading Test', function () {
         cy.wait(1000)
-        cy.get('#pagetype').should('have.text',this.cul.pageType)
-        cy.wait(1000)
+        cy.get('#pagetype').should('have.text', this.cul.pageType)
     });
 
-    it('Testing First Name Block',function(){
+    it.only('Testing First Name Block', function () {
         cy.wait(1000)
-        cy.get('#fname').should('have.text',this.cul.firstName)
-
+        cy.get('#fname').should('have.text', this.cul.firstName)
+        cy.wait(1000)
+        cy.get('input > firstName').invoke('attr', 'placeholder').should('contain', 'username')
+        // cy.get('#firstName').should('have.length',1)
+        // cy.wait(1000)
+        // cy.get('#firstName').type(this.cul.username,{delay:100})
+        // cy.wait(1000)
+        
     });
 
-    it('Testing Last Name Block',function(){
+    it('Testing Last Name Block', function () {
         cy.wait(1000)
-        cy.get('#lname').should('have.text',this.cul.LastName)
+        cy.get('#lname').should('have.text', this.cul.LastName)
     });
 
-    it('Testing Email',function(){
+    it('Testing Email', function () {
         cy.wait(1000)
-        cy.get('#email').should('have.text',this.cul.Email);
+        cy.get('#email').should('have.text', this.cul.Email);
     });
 
-    it('Testing Mobile',function(){
+    it('Testing Mobile', function () {
         cy.wait(1000)
-        cy.get('#mobile').should('have.text',this.cul.Mobile);
+        cy.get('#mobile').should('have.text', this.cul.Mobile);
     });
 
-    it('Testing Institute',function(){
+    it('Testing Institute', function () {
         cy.wait(1000)
-        cy.get('#inst').should('have.text',this.cul.Institute);
+        cy.get('#inst').should('have.text', this.cul.Institute);
     });
     // it('Testing Graduation Year',function(){
     //     cy.wait(1000)
@@ -71,4 +76,4 @@ describe('Basic Tests', () => {
     //     cy.wait(1000)
     //     cy.get('#inst').should('have.text',this.cul.Institute);
     // });
-  })
+})
