@@ -1,6 +1,6 @@
 ///    <reference types="cypress" />
 
-const english = require('../../fixtures/english.json') 
+var culture 
 
 describe('Basic Tests', () => {
 
@@ -9,11 +9,16 @@ describe('Basic Tests', () => {
 =======
     before(function(){
         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
+        // var s ='culture'
         cy.fixture('culture').then((culture) => {
             for(var language in culture){
                 var lang = cy.get('#country')
                 if(lang.should('have.value', language)){
-                    this.lang = cy.fixture(language)
+                    var s=culture[language].toString().toLowerCase()
+                    cy.fixture(s).then((langg)=>{
+                        this.langg=langg
+                    })
+                    cy.log(this.langg)
                     break
                 }
             };
@@ -32,15 +37,18 @@ describe('Basic Tests', () => {
         // expect(this.lang, 'fixture in the test context').to.deep.equal(selectlang)
 =======
     it('Fixture Load & Test', function() { 
-        cy.get('#country').select('German')
-        cy.wait(1000)
-        cy.get('#country').select('Hindi')
-        if(cy.get('#country').should('have.value', '02')){
-            cy.log("Hindiiiiiii")
-        }
-        else if(cy.get('#country').should('have.value', '01')){
-            cy.log("English")
-        }
+        // cy.get('#country').select('German')
+        // cy.wait(1000)
+        // cy.get('#country').select('Hindi')
+        // if(cy.get('#country').should('have.value', '02')){
+        //     cy.log("Hindiiiiiii")
+        // }
+        // else if(cy.get('#country').should('have.value', '01')){
+        //     cy.log("English")
+        // }
+        cy.log(culture)
+        // cy.get('#pagetype').should('have.value',culture.pageType)
+        // cy.get('#pagetype').should('not.have.value',culture.pageTitle)
         // expect(this.english, 'fixture in the test context').to.deep.equal(english)
 >>>>>>> 4635869f516b697c1d5617ca59ea17510662fe08
     })
