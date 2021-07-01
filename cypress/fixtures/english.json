@@ -1,4 +1,17 @@
 {
   "pageTitle": "BLUNDER'S PRIDE",
-  "pageType": "Registration"
+  "pageType": "Registration",
+  "firstName": "First name",
+  "LastName":"Last name",
+  "Email":"Email",
+  "Mobile":"Mobile",
+  "Institute":"Institute Name",
+  "Gradyr": "Graduation Year",
+  "Projectcat":"Project Category",
+  "category1":"Web Development",
+  "category2":"Machine learning",
+  "category3":"Web Development",
+  "idea":"Project Idea",
+  "check":"Save this information",
+  "submit":"Submit"
 }

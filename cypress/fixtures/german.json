@@ -1,5 +1,17 @@
 {
     "pageTitle": "BLUNDER'S PRIDE",
-    "pageType": "anmeldung"
-  }
-  
+    "pageType": "Registrierung",
+    "firstName": "Vorname",
+    "LastName": "Nachname",
+    "Email": "E-Mail",
+    "Mobile": "mobil",
+    "Institute": "Institutsname",
+    "Gradyr": "Abschlussjahr",
+    "Projectcat": "Projektkategorie",
+    "category1": "Webentwicklung",
+    "category2": "Maschinelles Lernen",
+    "category3": "App-Entwicklung",
+    "idea": "Projektidee",
+    "check": "Speichern dieser Informationen",
+    "submit": "Senden"
+}

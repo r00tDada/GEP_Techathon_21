@@ -1,0 +1,18 @@
+{
+    "pageTitle": "BLUNDER'S PRIDE",
+    "pageType": "Registrierung",
+    "firstName": "Nombre propio",
+    "LastName": "Apellido",
+    "Email": "Correo electrónico",
+    "Mobile": "Móvil",
+    "Institute": "nombre del Instituto",
+    "Gradyr": "Año de graduación",
+    "Projectcat": "Categoría de proyecto",
+    "category1": "Desarrollo web",
+    "category2": "Aprendizaje automático",
+    "category3": "Desarrollo de aplicaciones",
+    "idea": "Idea de proyecto",
+    "check": "Guarde esta información",
+    "submit": "Enviar"
+    }
+    
