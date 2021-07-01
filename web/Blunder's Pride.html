@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -82,16 +81,15 @@
     height: 70px;
     padding-left: 20px;
 ">
-    <h3 style="
-padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
-">BLUNDER'S PRIDE <p class="lead">GEP Techathon '21 </p>
+    <h3 style="padding-left: 10px;padding-bottom: 20px;padding-top: 30px;">
+      BLUNDER'S PRIDE <p class="lead">GEP Techathon '21 </p>
     </h3>
 
 
 
     <div class=" sk2">
 
-      <select class="from-select country" id="country" onchange = "changinglang()" required>
+      <select class="from-select country" id="country" onchange="changinglang()" required>
         <option value="01">English</option>
         <option value="02">Hindi</option>
         <option value="03">German</option>
@@ -108,7 +106,7 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
                             margin-bottom: 10px;
                             margin-top: 10px;
                             color: green;
-                            text-align: center;" id="pagetype">PageType</h3>
+                            text-align: center;" id="pagetype">Registration</h3>
 
       <!-- <div class="patterns">
         <svg width="100%" height="100%">
@@ -275,7 +273,7 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
     </ul>
   </footer>
   </div>
-  
+
 
 
   <script src="form-validation.js"></script>
@@ -284,61 +282,58 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
 </body>
 <script>
   var lang_choose;
-  
+
 
   // for changing html value
 
-  function changevaluehtml(data){
-    document.getElementById('pagetype').innerHTML=data.pageType
-    document.getElementById('fname').innerHTML=data.firstName
-    document.getElementById('lname').innerHTML=data.LastName
-    document.getElementById('email').innerHTML=data.Email
-    document.getElementById('mobile').innerHTML=data.Mobile
-    document.getElementById('inst').innerHTML=data.Institute
-    document.getElementById('gradyr').innerHTML=data.Gradyr
-    document.getElementById('pcat').innerHTML=data.Projectcat
-    document.getElementById('idea').innerHTML=data.idea
-    document.getElementById('cat1').innerHTML=data.category1
-    document.getElementById('cat2').innerHTML=data.category2
-    document.getElementById('cat3').innerHTML=data.category3
-    document.getElementById('check').innerHTML=data.check
-    document.getElementById('sub').innerHTML=data.submit
+  function changevaluehtml(data) {
+    document.getElementById('pagetype').innerHTML = data.pageType
+    document.getElementById('fname').innerHTML = data.firstName
+    document.getElementById('lname').innerHTML = data.LastName
+    document.getElementById('email').innerHTML = data.Email
+    document.getElementById('mobile').innerHTML = data.Mobile
+    document.getElementById('inst').innerHTML = data.Institute
+    document.getElementById('gradyr').innerHTML = data.Gradyr
+    document.getElementById('pcat').innerHTML = data.Projectcat
+    document.getElementById('idea').innerHTML = data.idea
+    document.getElementById('cat1').innerHTML = data.category1
+    document.getElementById('cat2').innerHTML = data.category2
+    document.getElementById('cat3').innerHTML = data.category3
+    document.getElementById('check').innerHTML = data.check
+    document.getElementById('sub').innerHTML = data.submit
   }
 
 
   // for selecting language
   var l1 = document.getElementById('country');
-  lang_choose= l1.options[l1.selectedIndex].text;
-  lang_choose=lang_choose.toLowerCase();
-  var file = "../cypress/fixtures/"+lang_choose+".json"
-      $.getJSON(file, function(data){
-          console.log(file)
-          changevaluehtml(data)
-      }).fail(function(){
-          console.log("An error while fetching json has occurred.");
-      });
-  
-  function changinglang(){
-    var l1 = document.getElementById('country');
-    lang_choose= l1.options[l1.selectedIndex].text;
-  $(document).ready(function(){
-    lang_choose=lang_choose.toLowerCase();
-    var file = "../cypress/fixtures/"+lang_choose+".json"
-      $.getJSON(file, function(data){
-          console.log(file)
-          changevaluehtml(data)
-      }).fail(function(){
-          console.log("An error while fetching json has occurred.");
-      });
-    
+  lang_choose = l1.options[l1.selectedIndex].text;
+  lang_choose = lang_choose.toLowerCase();
+  var file = "../cypress/fixtures/" + lang_choose + ".json"
+  $.getJSON(file, function (data) {
+    console.log(file)
+    changevaluehtml(data)
+  }).fail(function () {
+    console.log("An error while fetching json has occurred.");
   });
 
- 
-}
+  function changinglang() {
+    var l1 = document.getElementById('country');
+    lang_choose = l1.options[l1.selectedIndex].text;
+    $(document).ready(function () {
+      lang_choose = lang_choose.toLowerCase();
+      var file = "../cypress/fixtures/" + lang_choose + ".json"
+      $.getJSON(file, function (data) {
+        console.log(file)
+        changevaluehtml(data)
+      }).fail(function () {
+        console.log("An error while fetching json has occurred.");
+      });
+
+    });
 
 
- 
-  </script> 
+  }
+</script>
 
 
 </html>
