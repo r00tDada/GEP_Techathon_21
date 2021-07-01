@@ -2,30 +2,18 @@
 
 describe('End to End Tests', () => {
 
-    before(function(){
-
+    beforeEach(function(){
         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
-        
         cy.fixture('culture').then((culture) => {
-
             for(var language in culture){
-
-                var selectedLanguage = cy.get('#country')
-
-                if(selectedLanguage.should('have.value', language)){
-
+                if(cy.get('#country').should('have.value', language)){
                     cy.fixture(culture[language].toString().toLowerCase()).then((currentLanguage)=>{
                         this.cul=currentLanguage
                     })
-
                     break
                 }
             }
         })
-    })
-
-    beforeEach(function(){
-        cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
     });
 
     it('Entire Workflow Check for Selected Language', function() {
@@ -40,10 +28,8 @@ describe('End to End Tests', () => {
         cy.get('#cc-number').type('Localization Automation Testing')
         cy.get('#save-info').click()
         cy.get('#sub').click()
-        cy.wait('3000')
-        cy.on('window:confirm',()=>{
-            done()
-        })
+        cy.wait(1000)
+        cy.on('window:confirm',()=>{})
     });
 
   })
