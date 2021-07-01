@@ -40,7 +40,9 @@ describe('End to End Tests', () => {
         cy.get('#cc-number').type('Localization Automation Testing')
         cy.get('#save-info').click()
         cy.get('#sub').click()
-        cy.log("Confirm window closed" + cy.on('window:confirm'))
+        cy.on('window:confirm',()=>{
+            done()
+        })
     });
 
   })
