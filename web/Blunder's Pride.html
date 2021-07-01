@@ -7,9 +7,10 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.84.0">
-  <title>Automate</title>
+  <title>Automate Localization Testing</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -17,10 +18,6 @@
   <meta name="theme-color" content="#7952b3">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-
-
-
 
   <style>
     .bd-placeholder-img {
@@ -36,7 +33,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 80px;
+      height: 83px;
       display: flex;
       align-items: center;
       background-color: #043565;
@@ -65,11 +62,13 @@
 
       .sk2 {
         position: absolute;
-        right: 50px;
+        right: 20px;
         width: 170px;
       }
     }
   </style>
+
+
 
   <link href="form-validation.css" rel="stylesheet">
 </head>
@@ -77,28 +76,64 @@
 <body class="bg-light">
 
   <div class="toolbar" role="banner">
+    <img src="logo.png" alt="" width="20%" height="20%" style="
+    width: 100px;
+    height: 70px;
+    padding-left: 20px;
+">
+    <h3 style="
+padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
+">BLUNDER'S PRIDE <p class="lead">GEP Techathon '21 </p>
+    </h3>
+
+
+
     <div class=" sk2">
+
       <select class="form-select" id="country" required>
-        <option value="">Select language..</option>
-        <option>English</option>
+        <option value="">English</option>
+
         <option>Hindi</option>
         <option>German</option>
         <option>Spanish</option>
       </select>
       <div class="invalid-feedback">
-        Please select a valid country.
+        Please select a valid language.
       </div>
     </div>
   </div>
   <div class="container">
-    <main>
-      <div class="py-5 text-center" style="margin-top: 50px;">
-        <img src="logo.png" alt="" width="20%" height="20%">
-        <h3 id="pageTitle">BLUNDER'S PRIDE </h3>
-        <p class="lead">GEP Techathon '21 </p>
-        <h4 id="pageType" style="color: blueviolet;">Registration</h6>
-      </div>
+    <main style="padding-top: 80px;">
+      <h3 style="
+                            margin-bottom: 10px;
+                            margin-top: 10px;
+                            color: green;
+                            text-align: center;">Registration</h3>
+
+      <!-- <div class="patterns">
+        <svg width="100%" height="100%">
+          <defs>
+            <pattern id="polka-dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+              <circle fill="#be9ddf" cx="25" cy="25" r="3"></circle>
+            </pattern>
+            <style>
+              @import url("https://fonts.googleapis.com/css?  family=Lora:400,400i,700,700i");
+            </style>
+
+          </defs>
+
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)"> </rect>
+
+
+
+          <text x="50%" y="60%" text-anchor="middle">
+            Gracias
+          </text>
+        </svg>
+      </div> -->
+
       <div class="col-md-7 col-lg-8 sk ">
+
         <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-sm-6">
@@ -116,60 +151,88 @@
                 Valid last name is required.
               </div>
             </div>
-            <div class="col-12">
+
+
+
+            <div class="col-md-7">
               <label for="email" class="form-label">Email </label>
               <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
               <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
+                Please enter a valid email address .
               </div>
             </div>
-            <div class="col-12">
-              <label for="address" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="321 GEP Street" required>
+            <div class="col-md-5">
+              <label for="email" class="form-label">Mobile </label>
+              <input type="tel" class="form-control" id="mobile" placeholder="+91-" required>
               <div class="invalid-feedback">
-                Please enter your shipping address.
+                Please enter a valid mobile number .
               </div>
             </div>
 
+
+            <div class="col-md-8">
+              <label for="address" class="form-label">Institute Name</label>
+              <input type="text" class="form-control" id="address" placeholder="GEP School of Engineers" required>
+              <div class="invalid-feedback">
+                Please enter your Institute name.
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="address" class="form-label">Graduation Year</label>
+              <select class="form-select" id="country" required>
+                <option value="">Select</option>
+
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+              </select>
+              <!-- <input type="text" class="form-control" id="address" placeholder="GEP School" required> -->
+              <div class="invalid-feedback">
+                Please enter your Graduation Year.
+              </div>
+            </div>
+
+
+
+
+
+
           </div>
 
-          <hr class="my-2">
 
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address">
-            <label class="form-check-label" for="same-address">Shipping address is the same as my billing
-              address</label>
-          </div>
 
-          <hr class="my-2">
+          <h4 class="mb-3" style="
+          padding-top: 15px;
+      ">Project Category</h4>
 
-          <h4 class="mb-3">Payment</h4>
-
-          <div class="my-3">
-            <div class="form-check">
+          <div class="my-3" style="margin-left: 10px;">
+            <div class="form-check ">
               <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-              <label class="form-check-label" for="credit">Credit card</label>
+              <label class="form-check-label" for="credit">Web Development</label>
             </div>
-            <div class="form-check">
+            <div class="form-check ">
               <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="debit">Debit card</label>
+              <label class="form-check-label" for="debit">Machine learning</label>
             </div>
-            <div class="form-check">
+            <div class="form-check ">
               <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="paypal">PayPal</label>
+              <label class="form-check-label" for="paypal">App Development</label>
             </div>
           </div>
 
           <div class="row gy-3">
-            <div class="col-md-6">
-              <label for="cc-number" class="form-label">Credit card number</label>
+
+
+            <div class="col-12">
+              <label for="cc-number" class="form-label">Project Idea</label>
+
               <input type="text" class="form-control" id="cc-number" placeholder="" required>
               <div class="invalid-feedback">
-                Credit card number is required
+                Project Idea is required
               </div>
             </div>
 
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
               <label for="cc-expiration" class="form-label">Expiration</label>
               <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
               <div class="invalid-feedback">
@@ -183,23 +246,25 @@
               <div class="invalid-feedback">
                 Security code required
               </div>
-            </div>
+            </div> -->
           </div>
 
           <hr class="my-3">
 
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Save this information for next time</label>
+            <label class="form-check-label" for="save-info">Save this information </label>
           </div>
 
           <hr class="my-3">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Submit</button>
         </form>
       </div>
   </div>
   </main>
+
+
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; Blunder's Pride Pvt. Ltd. </p>
@@ -211,9 +276,7 @@
   </footer>
   </div>
 
-  <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+
 
   <script src="form-validation.js"></script>
 </body>
