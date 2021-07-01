@@ -35,7 +35,7 @@ describe('End to End Tests', () => {
         cy.get('.form-control#email').type('test_user@gep.com')
         cy.get('.form-control#mobile').type('+918780658153')
         cy.get('#address').type('Work From Home')
-        cy.get('.form-select').select('2022')
+        cy.get('#gradyear').select('2022')
         cy.get('#cat2').click()
         cy.get('#cc-number').type('Localization Automation Testing')
         cy.get('#save-info').click()
