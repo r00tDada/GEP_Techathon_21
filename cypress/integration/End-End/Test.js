@@ -20,15 +20,14 @@ describe('End to End Tests', () => {
         cy.get('#pagetype').should('have.text',this.cul.pageType)
         cy.get('#firstName').type('Test User')
         cy.get('#lastName').type('@GEP')
-        cy.get('.form-control#email').type('test_user@gep.com')
-        cy.get('.form-control#mobile').type('+918780658153')
-        cy.get('#address').type('Work From Home')
+        cy.get('#emailid').type('test_user@gep.com')
+        cy.get('#mobileno').type('+918780658153')
+        cy.get('#instname').type('Work From Home')
         cy.get('#gradyear').select('2022')
         cy.get('#cat2').click()
         cy.get('#cc-number').type('Localization Automation Testing')
         cy.get('#save-info').click()
         cy.get('#sub').click()
-        cy.wait(1000)
         cy.on('window:confirm',()=>{})
     });
 
