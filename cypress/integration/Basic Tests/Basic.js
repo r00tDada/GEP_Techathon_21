@@ -128,19 +128,22 @@ describe('Basic Tests', () => {
     //     cy.wait(1500)
 
     // });
-    it('Testing Graduation Year',function(){
-        cy.wait(1000)
-        cy.get('#gradyr').should('have.text',this.cul.Gradyr);
-        cy.wait(1000)
-        cy.get('#gradyear').click()
-        cy.wait(1000)
-        // cy.get('#gradyear').select(this.cul.selectyr);
-        cy.wait(1500)
-    });
-    // it('Testing Project Category',function(){
+    // it('Testing Graduation Year',function(){
     //     cy.wait(1000)
-    //     cy.get('#pcat').should('have.text',this.cul.Projectcat);
+    //     cy.log('**checking field name**')c
+    //     cy.get('#gradyr').should('have.text',this.cul.Gradyr)
+    //     cy.wait(1000)
+    //     cy.log("Selecting graduation yrs")
+    //     cy.get('#gradyear').select(this.cul.selectyr2)
+    //     cy.wait(1500)
     // });
+    it('Testing Project Category',function(){
+        cy.wait(1000)
+        cy.log('**checking field name**')
+        cy.get('#pcat').should('have.text',this.cul.Projectcat);
+        cy.log('Checking checkbox')
+        
+    });
     // it('Testing Institute',function(){
     //     cy.wait(1000)
     //     cy.get('#inst').should('have.text',this.cul.Institute);
