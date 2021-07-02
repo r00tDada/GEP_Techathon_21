@@ -8,24 +8,18 @@ describe('language change', () => {
     });
 })
 
+
 describe('Basic Tests', () => {
     beforeEach(function () {
-
         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
-
         cy.fixture('culture').then((culture) => {
-
             for (var language in culture) {
-
-                var selectedLanguage = cy.get('#country')
-                
+                var selectedLanguage = cy.get('#country').select('German')
                 if (selectedLanguage.should('have.value', language)) {
-
                     cy.fixture(culture[language].toString().toLowerCase()).then((currentLanguage) => {
                         this.cul = currentLanguage
                         cy.log(currentLanguage)
                     })
-
                     break
                 }
             }
