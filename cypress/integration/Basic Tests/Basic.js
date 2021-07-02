@@ -141,18 +141,32 @@ describe('Basic Tests', () => {
         cy.wait(1000)
         cy.log('**checking field name**')
         cy.get('#pcat').should('have.text',this.cul.Projectcat);
-        cy.log('Checking radio buttons')
+        cy.wait(1200)
+        cy.log('**Initially checking radio button')
         cy.get('#inpcat1').should('be.visible').should('not.be.checked')
         cy.get('#inpcat2').should('be.visible').should('be.checked')
+        cy.get('#inpcat3').should('be.visible').should('not.be.checked')
+        cy.wait(1200)
+        cy.log('Checking radio button '+this.cul.category3)
+        cy.get('#inpcat3').click()
+        cy.get('#inpcat1').should('be.visible').should('not.be.checked')
+        cy.get('#inpcat2').should('be.visible').should('not.be.checked')
         cy.get('#inpcat3').should('be.visible').should('be.checked')
-
+        cy.wait(1500)
     });
-    // it('Testing Institute',function(){
-    //     cy.wait(1000)
-    //     cy.get('#inst').should('have.text',this.cul.Institute);
-    // });
-    // it('Testing Institute',function(){
-    //     cy.wait(1000)
-    //     cy.get('#inst').should('have.text',this.cul.Institute);
-    // });
+    it('Testing Project Idea Block',function(){
+        cy.wait(1000)
+        cy.get('#idea').should('have.text',this.cul.idea);
+        cy.wait(1000)
+        cy.log('**checking no. of inputs**')
+        cy.get('#cc-number').should('have.length', 1)
+        cy.wait(1000)
+        cy.log('**checking if it is empty or not**')
+        cy.get('input[id=cc-number]').invoke('val').should('be.empty')
+        cy.wait(1000)
+        cy.log('Enter the project idea')
+        cy.get('#cc-number').type(this.cul.projectidea, { delay: 100 })
+        cy.wait(1500)
+    });
+
 })
