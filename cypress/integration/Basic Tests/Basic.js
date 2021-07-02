@@ -84,25 +84,25 @@ describe('Basic Tests', () => {
     //     cy.get('#emailid').type(this.cul.emailid, { delay: 100 })
     // });
 
-    it('Testing Mobile Block', function () {
-        cy.wait(1000)
-        cy.log('**checking field name**')
-        cy.get('#mobile').should('have.text', this.cul.Mobile);
-        cy.wait(1000)
-        cy.log('**checking placeholder**')
-        cy.get('#mobileno').invoke('attr', 'placeholder').should('contain', this.cul.mobileplaceholder)
-        cy.wait(1000)
-        cy.log('**checking no. of inputs**')
-        cy.get('#mobileno').should('have.length', 1)
-        cy.wait(1000)
-        cy.log('**checking if it is empty or not**')
-        cy.get('input[id=mobileno]').invoke('val').should('be.empty')
-        cy.wait(1000)
-        cy.log('Enter the email')
-        cy.get('#mobileno').type(this.cul.mobileno, { delay: 100 })
-    });
+    // it('Testing Mobile Block', function () {
+    //     cy.wait(1000)
+    //     cy.log('**checking field name**')
+    //     cy.get('#mobile').should('have.text', this.cul.Mobile);
+    //     cy.wait(1000)
+    //     cy.log('**checking placeholder**')
+    //     cy.get('#mobileno').invoke('attr', 'placeholder').should('contain', this.cul.mobileplaceholder)
+    //     cy.wait(1000)
+    //     cy.log('**checking no. of inputs**')
+    //     cy.get('#mobileno').should('have.length', 1)
+    //     cy.wait(1000)
+    //     cy.log('**checking if it is empty or not**')
+    //     cy.get('input[id=mobileno]').invoke('val').should('be.empty')
+    //     cy.wait(1000)
+    //     cy.log('Enter the email')
+    //     cy.get('#mobileno').type(this.cul.mobileno, { delay: 100 })
+    // });
 
-    it('Testing Institute', function () {
+    it('Testing Institute Block', function () {
         cy.wait(1000)
         cy.get('#inst').should('have.text', this.cul.Institute);
     });
