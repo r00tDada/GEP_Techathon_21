@@ -37,8 +37,7 @@ describe('Basic Tests', () => {
         // cy.get('#firstName').should('have.length',1)
         // cy.wait(1000)
         // cy.get('#firstName').type(this.cul.username,{delay:100})
-        // cy.wait(1000)
-        
+        // cy.wait(1000) 
     });
 
     it('Testing Last Name Block', function () {
