@@ -10,26 +10,31 @@
 
 const cul = require('../../fixtures/culture.json')
 
-var lan = ['English', 'German', 'Spanish', 'Hindi']
-// for (var lang in cul){
-//     lan.append(cul[lang])
-// }
-
+var lan = []
+for (var index in cul) {
+    lan.push(index)
+}
+console.log(lan)
+// var lan = ['01', '02', '03', '04']
 describe('Basic Tests', () => {
     beforeEach(function () {
         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
-        // cy.fixture('culture').then((culture) => {
         cy.wrap(lan).each((language) => {
-
-            var selectedLanguage = cy.get('#country')
-            if (selectedLanguage.should('have.text', language)) {
-                cy.fixture(language.toString().toLowerCase()).then((currentLanguage) => {
+            var selectedLanguage = cy.get('#country').select('Hindi')
+            // cy.on('fail',(e)=>{
+            //     console.log()
+            // })
+            if (selectedLanguage.should('have.value', language.toString())) {
+                cy.fixture(cul[language].toString().toLowerCase()).then((currentLanguage) => {
                     this.cul = currentLanguage
                     cy.log(currentLanguage)
                 })
             }
-        });
+            else {
+                return false
 
+            }
+        });
     })
     it('Home Page Loading Test', function () {
         cy.wait(1000)
@@ -91,7 +96,7 @@ describe('Basic Tests', () => {
         cy.get('input[id=emailid]').invoke('val').should('be.empty')
         cy.wait(1000)
         cy.log('Enter the email')
-        cy.get('#emailid').type(this.cul.emailid, { delay: 100 })
+        cy.get('#emailid').click().type(this.cul.emailid, { delay: 100 })
         cy.wait(1500)
 
     });
