@@ -142,7 +142,9 @@ describe('Basic Tests', () => {
         cy.log('**checking field name**')
         cy.get('#pcat').should('have.text',this.cul.Projectcat);
         cy.log('Checking radio buttons')
-        cy.get('#webd').should('be.visible').should('be.checked')
+        cy.get('#inpcat1').should('be.visible').should('not.be.checked')
+        cy.get('#inpcat2').should('be.visible').should('be.checked')
+        cy.get('#inpcat3').should('be.visible').should('be.checked')
 
     });
     // it('Testing Institute',function(){
