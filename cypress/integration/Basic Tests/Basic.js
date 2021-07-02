@@ -1,7 +1,14 @@
 ///    <reference types="cypress" />
 
-describe('Basic Tests', () => {
+describe('language change', () => {
+    it('Language Changing Test', function () {
+        cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
+        cy.wait(1000)
+        cy.get('#country').select('German')
+    });
+})
 
+describe('Basic Tests', () => {
     beforeEach(function () {
 
         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
@@ -10,12 +17,13 @@ describe('Basic Tests', () => {
 
             for (var language in culture) {
 
-                var selectedLanguage = cy.get('#country')
-
+                var selectedLanguage = cy.get('#country').select('German')
+                
                 if (selectedLanguage.should('have.value', language)) {
 
                     cy.fixture(culture[language].toString().toLowerCase()).then((currentLanguage) => {
                         this.cul = currentLanguage
+                        cy.log(currentLanguage)
                     })
 
                     break
@@ -23,7 +31,6 @@ describe('Basic Tests', () => {
             }
         })
     })
-
     it('Home Page Loading Test', function () {
         cy.wait(1000)
         cy.get('#pagetype').should('have.text', this.cul.pageType)
@@ -38,13 +45,13 @@ describe('Basic Tests', () => {
         cy.get('#firstName').invoke('attr', 'placeholder').should('contain', this.cul.firstnameplaceholder)
         cy.wait(1000)
         cy.log('**checking no. of inputs**')
-        cy.get('#firstName').should('have.length',1)
+        cy.get('#firstName').should('have.length', 1)
         cy.wait(1000)
         cy.log('**checking if it is empty or not**')
         cy.get('input[id=firstName]').invoke('val').should('be.empty')
         cy.wait(1000)
         cy.log('Enter the first name')
-        cy.get('#firstName').type(this.cul.userfirstname,{delay:100}) 
+        cy.get('#firstName').type(this.cul.userfirstname, { delay: 100 })
         cy.wait(1500)
     });
 
@@ -57,13 +64,13 @@ describe('Basic Tests', () => {
         cy.get('#lastName').invoke('attr', 'placeholder').should('contain', this.cul.lastnameplaceholder)
         cy.wait(1000)
         cy.log('**checking no. of inputs**')
-        cy.get('#lastName').should('have.length',1)
+        cy.get('#lastName').should('have.length', 1)
         cy.wait(1000)
         cy.log('**checking if it is empty or not**')
         cy.get('input[id=lastName]').invoke('val').should('be.empty')
         cy.wait(1000)
         cy.log('Enter the last name')
-        cy.get('#lastName').type(this.cul.userlastname,{delay:100}) 
+        cy.get('#lastName').type(this.cul.userlastname, { delay: 100 })
         cy.wait(1500)
 
     });
@@ -128,16 +135,16 @@ describe('Basic Tests', () => {
         cy.wait(1500)
 
     });
-    it('Testing Graduation Year',function(){
+    it('Testing Graduation Year', function () {
         cy.wait(1000)
         cy.log('**checking field name**')
-        cy.get('#gradyr').should('have.text',this.cul.Gradyr)
+        cy.get('#gradyr').should('have.text', this.cul.Gradyr)
         cy.wait(1000)
-    cy.log('**checking inputs year**')
-    cy.get('#gradyear').find('option').then(options => {
-        const yr = [...options].map(o => o.text)
-        expect(yr).to.deep.eq([this.cul.selectyr1,this.cul.selectyr2,this.cul.selectyr3,this.cul.selectyr4])
-    })
+        cy.log('**checking inputs year**')
+        cy.get('#gradyear').find('option').then(options => {
+            const yr = [...options].map(o => o.text)
+            expect(yr).to.deep.eq([this.cul.selectyr1, this.cul.selectyr2, this.cul.selectyr3, this.cul.selectyr4])
+        })
         cy.wait(1000)
         cy.log("Selecting graduation yrs")
         cy.get('#gradyear').select(this.cul.selectyr2)
@@ -151,7 +158,7 @@ describe('Basic Tests', () => {
         cy.log('**checking category name**')
         cy.get('.pcattype').find('label').then(options => {
             const cat = [...options].map(o => o.innerHTML)
-            expect(cat).to.deep.eq([this.cul.category1,this.cul.category2,this.cul.category3])
+            expect(cat).to.deep.eq([this.cul.category1, this.cul.category2, this.cul.category3])
         })
         cy.wait(1200)
         cy.log('**Initially checking radio button')
@@ -166,9 +173,9 @@ describe('Basic Tests', () => {
         cy.get('#inpcat3').should('be.visible').should('be.checked')
         cy.wait(1500)
     });
-    it('Testing Project Idea Block',function(){
+    it('Testing Project Idea Block', function () {
         cy.wait(1000)
-        cy.get('#idea').should('have.text',this.cul.idea);
+        cy.get('#idea').should('have.text', this.cul.idea);
         cy.wait(1000)
         cy.log('**checking no. of inputs**')
         cy.get('#cc-number').should('have.length', 1)
