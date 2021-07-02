@@ -2,7 +2,7 @@
   "pageTitle": "BLUNDER'S PRIDE",
   "pageType": "Registration",
   "firstName": "First name",
-  "LastName":"Last name",
+  "lastName":"Last name",
   "Email":"Email",
   "Mobile":"Mobile",
   "Institute":"Institute Name",
@@ -14,6 +14,12 @@
   "idea":"Project Idea",
   "check":"Save this information",
   "submit":"Submit",
+  "firstnameplaceholder":"userfirstname",
   "userfirstname":"Sourabh",
-  "userlastname":"Gupta"
+  "lastnameplaceholder":"userlastname",
+  "userlastname":"Gupta",
+  "emailplaceholder":"you@example.com",
+  "emailid":"Sourabh_Gupta@gep.com"
+
+
 }
