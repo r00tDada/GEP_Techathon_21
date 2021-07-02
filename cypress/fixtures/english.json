@@ -19,7 +19,9 @@
   "lastnameplaceholder":"userlastname",
   "userlastname":"Gupta",
   "emailplaceholder":"you@example.com",
-  "emailid":"Sourabh_Gupta@gep.com"
+  "emailid":"Sourabh_Gupta@gep.com",
+  "mobileplaceholder":"+91-",
+  "mobileno":"8696687594"
 
 
 }
