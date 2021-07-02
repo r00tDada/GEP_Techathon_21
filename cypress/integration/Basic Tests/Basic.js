@@ -1,29 +1,35 @@
 ///    <reference types="cypress" />
 
-describe('language change', () => {
-    it('Language Changing Test', function () {
-        cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
-        cy.wait(1000)
-        cy.get('#country').select('German')
-    });
-})
+// describe('language change', () => {
+//     it('Language Changing Test', function () {
+//         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
+//         cy.wait(1000)
+//         cy.get('#country').select('German')
+//     });
+// })
 
+const cul = require('../../fixtures/culture.json')
+
+var lan = ['English', 'German', 'Spanish', 'Hindi']
+// for (var lang in cul){
+//     lan.append(cul[lang])
+// }
 
 describe('Basic Tests', () => {
     beforeEach(function () {
         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
-        cy.fixture('culture').then((culture) => {
-            for (var language in culture) {
-                var selectedLanguage = cy.get('#country').select('German')
-                if (selectedLanguage.should('have.value', language)) {
-                    cy.fixture(culture[language].toString().toLowerCase()).then((currentLanguage) => {
-                        this.cul = currentLanguage
-                        cy.log(currentLanguage)
-                    })
-                    break
-                }
+        // cy.fixture('culture').then((culture) => {
+        cy.wrap(lan).each((language) => {
+
+            var selectedLanguage = cy.get('#country')
+            if (selectedLanguage.should('have.text', language)) {
+                cy.fixture(language.toString().toLowerCase()).then((currentLanguage) => {
+                    this.cul = currentLanguage
+                    cy.log(currentLanguage)
+                })
             }
-        })
+        });
+
     })
     it('Home Page Loading Test', function () {
         cy.wait(1000)
