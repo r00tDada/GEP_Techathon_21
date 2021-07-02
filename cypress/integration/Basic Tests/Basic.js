@@ -137,12 +137,13 @@ describe('Basic Tests', () => {
     //     cy.get('#gradyear').select(this.cul.selectyr2)
     //     cy.wait(1500)
     // });
-    it('Testing Project Category',function(){
+    it('Testing Project Category and radio',function(){
         cy.wait(1000)
         cy.log('**checking field name**')
         cy.get('#pcat').should('have.text',this.cul.Projectcat);
-        cy.log('Checking checkbox')
-        
+        cy.log('Checking radio buttons')
+        cy.get('#webd').should('be.visible').should('be.checked')
+
     });
     // it('Testing Institute',function(){
     //     cy.wait(1000)
