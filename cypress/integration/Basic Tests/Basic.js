@@ -31,19 +31,38 @@ describe('Basic Tests', () => {
 
     it.only('Testing First Name Block', function () {
         cy.wait(1000)
+        cy.log('**checking field name**')
         cy.get('#fname').should('have.text', this.cul.firstName)
         cy.wait(1000)
-        cy.get('input > firstName').invoke('attr', 'placeholder').should('contain', 'username')
-        // cy.get('#firstName').should('have.length',1)
-        // cy.wait(1000)
-        // cy.get('#firstName').type(this.cul.username,{delay:100})
-        // cy.wait(1000)
-        
+        cy.log('**checking placeholder**')
+        cy.get('#firstName').invoke('attr', 'placeholder').should('contain', 'userfirstname')
+        cy.wait(1000)
+        cy.log('**checking no. of inputs**')
+        cy.get('#firstName').should('have.length',1)
+        cy.wait(1000)
+        cy.log('**checking if it is empty or not**')
+        cy.get('input[id=firstName]').invoke('val').should('be.empty')
+        cy.wait(1000)
+        cy.log('Enter the name')
+        cy.get('#firstName').type(this.cul.userfirstname,{delay:100}) 
     });
 
     it('Testing Last Name Block', function () {
         cy.wait(1000)
-        cy.get('#lname').should('have.text', this.cul.LastName)
+        cy.log('**checking field name**')
+        cy.get('#lname').should('have.text', this.cul.firstName)
+        cy.wait(1000)
+        cy.log('**checking placeholder**')
+        cy.get('#lastName').invoke('attr', 'placeholder').should('contain', 'userlastname')
+        cy.wait(1000)
+        cy.log('**checking no. of inputs**')
+        cy.get('#lastName').should('have.length',1)
+        cy.wait(1000)
+        cy.log('**checking if it is empty or not**')
+        cy.get('input[id=lastName]').invoke('val').should('be.empty')
+        cy.wait(1000)
+        cy.log('Enter the name')
+        cy.get('#lastName').type(this.cul.userlastname,{delay:100}) 
     });
 
     it('Testing Email', function () {
