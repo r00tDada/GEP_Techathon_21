@@ -1,8 +1,8 @@
 {
   "pageTitle": "BLUNDER'S PRIDE",
   "pageType": "Registration",
-  "firstName": "First name",
-  "LastName":"Last name",
+  "firstName": "First Name",
+  "LastName": "Last Name",
   "Email":"Email",
   "Mobile":"Mobile",
   "Institute":"Institute Name",
@@ -14,6 +14,19 @@
   "idea":"Project Idea",
   "check":"Save this information",
   "submit":"Submit",
-  "username":"Sourabh Gupta",
-  "username1":""
+  "firstnameplaceholder":"userfirstname",
+  "userfirstname":"Sourabh",
+  "lastnameplaceholder":"userlastname",
+  "userlastname":"Gupta",
+  "emailplaceholder":"you@example.com",
+  "emailid":"Sourabh_Gupta@gep.com",
+  "mobileplaceholder":"+91-",
+  "mobileno":"8696687594",
+  "instplaceholder":"GEP School of Engineers",
+  "instname":"Institute of GEP",
+  "selectyr1":"2021",
+  "selectyr2":"2022",
+  "selectyr3":"2023",
+  "selectyr4":"2024",
+  "projectidea":"Localisation testing using cypress"
 }

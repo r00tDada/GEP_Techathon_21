@@ -13,5 +13,20 @@
     "category3": "App-Entwicklung",
     "idea": "Projektidee",
     "check": "Speichern dieser Informationen",
-    "submit": "Senden"
+    "submit": "Senden",
+    "firstnameplaceholder": "nombre de usuario",
+    "userfirstname": "Sourabh",
+    "lastnameplaceholder": "nombre de usuario",
+    "userlastname": "Gupta",
+    "emailplaceholder": "you@example.com",
+    "emailid": "Sourabh_Gupta@gep.com",
+    "mobileplaceholder": "+91-",
+    "mobileno": "8696687594",
+    "instplaceholder": "Escuela de Ingenieros GEP",
+    "instname": "Institut für GEP",
+    "selectyr1": "2021",
+    "selectyr2": "2022",
+    "selectyr3": "2023",
+    "selectyr4": "2024",
+    "projectidea": "Lokalisierungstest mit Zypresse"
 }

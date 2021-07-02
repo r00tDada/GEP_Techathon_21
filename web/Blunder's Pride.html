@@ -136,7 +136,7 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label" id="fname">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="username" value="" required>
+              <input type="text" class="form-control" id="firstName" placeholder="userfirstname" value="" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -144,7 +144,7 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label" id="lname">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="lastName" placeholder="userlastname" value="" required>
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -154,14 +154,14 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
 
             <div class="col-md-7">
               <label for="email" class="form-label" id="email">Email </label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+              <input type="email" class="form-control" id="emailid" placeholder="you@example.com" required>
               <div class="invalid-feedback">
                 Please enter a valid email address .
               </div>
             </div>
             <div class="col-md-5">
               <label for="email" class="form-label" id="mobile">Mobile </label>
-              <input type="tel" class="form-control" id="mobile" placeholder="+91-" required>
+              <input type="tel" class="form-control" id="mobileno" placeholder="+91-" required>
               <div class="invalid-feedback">
                 Please enter a valid mobile number .
               </div>
@@ -170,7 +170,7 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
 
             <div class="col-md-8">
               <label for="address" class="form-label" id="inst">Institute Name</label>
-              <input type="text" class="form-control" id="address" placeholder="GEP School of Engineers" required>
+              <input type="text" class="form-control" id="instname" placeholder="GEP School of Engineers" required>
               <div class="invalid-feedback">
                 Please enter your Institute name.
               </div>
@@ -178,9 +178,10 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
             <div class="col-md-4">
               <label for="address" class="form-label" id="gradyr">Graduation Year</label>
               <select class="form-select" id="gradyear" required>
-                <option>2021</option>
-                <option>2022</option>
-                <option>2023</option>
+                <option value="011">2021</option>
+                <option value="012">2022</option>
+                <option value="013">2023</option>
+                <option value="014">2024</option>
               </select>
               <!-- <input type="text" class="form-control" id="address" placeholder="GEP School" required> -->
               <div class="invalid-feedback">
@@ -200,17 +201,17 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
           <h4 class="mb-3" style="
           padding-top: 15px;" id="pcat">Project Category</h4>
 
-          <div class="my-3" style="margin-left: 10px;">
+          <div class="pcattype" style="margin-left: 10px;">
             <div class="form-check ">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <input id="inpcat1" name="paymentMethod" type="radio" class="form-check-input"  required>
               <label class="form-check-label" for="credit" id="cat1">Web Development</label>
             </div>
             <div class="form-check ">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+              <input id="inpcat2" name="paymentMethod" type="radio" class="form-check-input" checked required>
               <label class="form-check-label" for="debit" id="cat2">Machine learning</label>
             </div>
             <div class="form-check ">
-              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <input id="inpcat3" name="paymentMethod" type="radio" class="form-check-input" required>
               <label class="form-check-label" for="paypal" id="cat3">App Development</label>
             </div>
           </div>
@@ -302,6 +303,11 @@ padding-left: 10px;padding-bottom: 20px;padding-top: 30px;
     document.getElementById('cat3').innerHTML = data.category3
     document.getElementById('check').innerHTML = data.check
     document.getElementById('sub').innerHTML = data.submit
+    document.getElementById('firstName').placeholder= data.firstnameplaceholder
+    document.getElementById('lastName').placeholder= data.lastnameplaceholder
+    document.getElementById('emailid').placeholder= data.emailplaceholder
+    document.getElementById('mobileno').placeholder= data.mobileplaceholder
+    document.getElementById('instname').placeholder= data.instplaceholder
   }
 
 
