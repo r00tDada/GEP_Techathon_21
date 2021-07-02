@@ -16,7 +16,7 @@
     "url": "https://github.com/r00tDada/GEP_Techathon_21/issues"
   },
   "homepage": "https://github.com/r00tDada/GEP_Techathon_21#readme",
-  "devDependencies": {
+  "dependencies": {
     "cypress": "^7.6.0"
   }
 }
