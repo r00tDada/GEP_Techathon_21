@@ -17,7 +17,7 @@ describe('Basic Tests', () => {
 
             for (var language in culture) {
 
-                var selectedLanguage = cy.get('#country').select('German')
+                var selectedLanguage = cy.get('#country')
                 
                 if (selectedLanguage.should('have.value', language)) {
 
