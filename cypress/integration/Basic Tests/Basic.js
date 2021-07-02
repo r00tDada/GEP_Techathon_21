@@ -14,71 +14,81 @@ var lan = []
 for (var index in cul) {
     lan.push(index)
 }
-console.log(lan)
 // var lan = ['01', '02', '03', '04']
+
+
 describe('Basic Tests', () => {
     beforeEach(function () {
         cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
         cy.wrap(lan).each((language) => {
-            var selectedLanguage = cy.get('#country').select('Hindi')
-            // cy.on('fail',(e)=>{
-            //     console.log()
-            // })
-            if (selectedLanguage.should('have.value', language.toString())) {
-                cy.fixture(cul[language].toString().toLowerCase()).then((currentLanguage) => {
-                    this.cul = currentLanguage
-                    cy.log(currentLanguage)
-                })
-            }
-            else {
-                return false
+            cy.fixture(cul[language]).then((currentLanguage) => {
+                this.cul = currentLanguage
+                cy.get('#country').select(cul[language])
+                cy.Home_Page_Loading_Test(this.cul)
+                cy.Testing_First_Name_Block(this.cul)
+                cy.Testing_Last_Name_Block(this.cul)
+            })
 
-            }
-        });
-    })
-    it('Home Page Loading Test', function () {
-        cy.wait(1000)
-        cy.get('#pagetype').should('have.text', this.cul.pageType)
+        })
     });
+        // var selectedLanguage = cy.get('#country')
+        // cy.log(selectedLanguage)
+        // cy.on('fail',(e)=>{
+        //     console.log()
+        // })
+        // if (selectedLanguage.should('have.value', language.toString())) {
+        // cy.fixture('english').then((currentLanguage) => {
+        // this.cul = currentLanguage
+        // cy.log(currentLanguage)
+        // })
+        // }
+        // else {
+        // return false
+        // });
 
-    it('Testing First Name Block', function () {
-        cy.wait(1000)
-        cy.log('**checking field name**')
-        cy.get('#fname').should('have.text', this.cul.firstName)
-        cy.wait(1000)
-        cy.log('**checking placeholder**')
-        cy.get('#firstName').invoke('attr', 'placeholder').should('contain', this.cul.firstnameplaceholder)
-        cy.wait(1000)
-        cy.log('**checking no. of inputs**')
-        cy.get('#firstName').should('have.length', 1)
-        cy.wait(1000)
-        cy.log('**checking if it is empty or not**')
-        cy.get('input[id=firstName]').invoke('val').should('be.empty')
-        cy.wait(1000)
-        cy.log('Enter the first name')
-        cy.get('#firstName').type(this.cul.userfirstname, { delay: 100 })
-        cy.wait(1500)
-    });
+    // it('Home Page Loading Test', function () {
+    //     cy.wait(1000)
+    //     cy.get('#pagetype').should('have.text', this.cul.pageType)
+    // });
 
-    it('Testing Last Name Block', function () {
-        cy.wait(1000)
-        cy.log('**checking field name**')
-        cy.get('#lname').should('have.text', this.cul.LastName)
-        cy.wait(1000)
-        cy.log('**checking placeholder**')
-        cy.get('#lastName').invoke('attr', 'placeholder').should('contain', this.cul.lastnameplaceholder)
-        cy.wait(1000)
-        cy.log('**checking no. of inputs**')
-        cy.get('#lastName').should('have.length', 1)
-        cy.wait(1000)
-        cy.log('**checking if it is empty or not**')
-        cy.get('input[id=lastName]').invoke('val').should('be.empty')
-        cy.wait(1000)
-        cy.log('Enter the last name')
-        cy.get('#lastName').type(this.cul.userlastname, { delay: 100 })
-        cy.wait(1500)
+    // it('Testing First Name Block', function () {
+    //     cy.wait(1000)
+    //     cy.log('**checking field name**')
+    //     cy.get('#fname').should('have.text', this.cul.firstName)
+    //     cy.wait(1000)
+    //     cy.log('**checking placeholder**')
+    //     cy.get('#firstName').invoke('attr', 'placeholder').should('contain', this.cul.firstnameplaceholder)
+    //     cy.wait(1000)
+    //     cy.log('**checking no. of inputs**')
+    //     cy.get('#firstName').should('have.length', 1)
+    //     cy.wait(1000)
+    //     cy.log('**checking if it is empty or not**')
+    //     cy.get('input[id=firstName]').invoke('val').should('be.empty')
+    //     cy.wait(1000)
+    //     cy.log('Enter the first name')
+    //     cy.get('#firstName').type(this.cul.userfirstname, { delay: 100 })
+    //     cy.wait(1500)
+    // });
 
-    });
+    // it('Testing Last Name Block', function () {
+    //     cy.wait(1000)
+    //     cy.log('**checking field name**')
+    //     cy.get('#lname').should('have.text', this.cul.LastName)
+    //     cy.wait(1000)
+    //     cy.log('**checking placeholder**')
+    //     cy.get('#lastName').invoke('attr', 'placeholder').should('contain', this.cul.lastnameplaceholder)
+    //     cy.wait(1000)
+    //     cy.log('**checking no. of inputs**')
+    //     cy.get('#lastName').should('have.length', 1)
+    //     cy.wait(1000)
+    //     cy.log('**checking if it is empty or not**')
+    //     cy.get('input[id=lastName]').invoke('val').should('be.empty')
+    //     cy.wait(1000)
+    //     cy.log('Enter the last name')
+    //     cy.get('#lastName').type(this.cul.userlastname, { delay: 100 })
+    //     cy.wait(1500)
+
+    // });
 
     it('Testing Email Block', function () {
 
