@@ -130,7 +130,9 @@ describe('Basic Tests', () => {
     });
     it('Testing Graduation Year',function(){
         cy.wait(1000)
-        cy.get('#Gradyr').should('have.text',this.cul.Gradyr);
+        cy.get('#gradyr').should('have.text',this.cul.Gradyr);
+        cy.wait(1000)
+        cy.get()
     });
     // it('Testing Project Category',function(){
     //     cy.wait(1000)

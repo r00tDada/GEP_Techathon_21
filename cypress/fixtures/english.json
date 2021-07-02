@@ -2,7 +2,7 @@
   "pageTitle": "BLUNDER'S PRIDE",
   "pageType": "Registration",
   "firstName": "First name",
-  "lastName":"Last name",
+  "LastName":"Last name",
   "Email":"Email",
   "Mobile":"Mobile",
   "Institute":"Institute Name",
@@ -23,7 +23,6 @@
   "mobileplaceholder":"+91-",
   "mobileno":"8696687594",
   "instplaceholder":"GEP School of Engineers",
-  "instname":"Institute of GEP"
-
-
+  "instname":"Institute of GEP",
+  "selectyr":"2022"
 }
