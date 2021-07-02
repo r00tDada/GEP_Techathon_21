@@ -26,50 +26,173 @@
 
 ///    <reference types="cypress" />
 
-Cypress.Commands.add('Home_Page_Loading_Test',(obj)=>{
-    cy.wait(1000)
-    cy.get('#pagetype').should('have.text', obj.pageType)    
+Cypress.Commands.add('Home_Page_Loading_Test', (obj) => {
+    cy.wait(100)
+    cy.get('#pagetype').should('have.text', obj.pageType)
+    cy.wait(100)
 })
 
-Cypress.Commands.add('Testing_First_Name_Block',(obj)=>{
-    cy.wait(1000)
+Cypress.Commands.add('Testing_First_Name_Block', (obj) => {
+    cy.wait(100)
     cy.log('**checking field name**')
     cy.get('#fname').should('have.text', obj.firstName)
-    cy.wait(1000)
+    cy.wait(100)
     cy.log('**checking placeholder**')
     cy.get('#firstName').invoke('attr', 'placeholder').should('contain', obj.firstnameplaceholder)
-    cy.wait(1000)
+    cy.wait(100)
     cy.log('**checking no. of inputs**')
     cy.get('#firstName').should('have.length', 1)
-    cy.wait(1000)
+    cy.wait(100)
     cy.log('**checking if it is empty or not**')
     cy.get('input[id=firstName]').invoke('val').should('be.empty')
-    cy.wait(1000)
+    cy.wait(100)
     cy.log('Enter the first name')
     cy.get('#firstName').type(obj.userfirstname, { delay: 100 })
-    cy.wait(1500)   
+    cy.wait(100)
 })
 
-Cypress.Commands.add('Testing_Last_Name_Block',(obj)=>{
-    cy.wait(1000)
-        cy.log('**checking field name**')
-        cy.get('#lname').should('have.text', obj.LastName)
-        cy.wait(1000)
-        cy.log('**checking placeholder**')
-        cy.get('#lastName').invoke('attr', 'placeholder').should('contain', obj.lastnameplaceholder)
-        cy.wait(1000)
-        cy.log('**checking no. of inputs**')
-        cy.get('#lastName').should('have.length', 1)
-        cy.wait(1000)
-        cy.log('**checking if it is empty or not**')
-        cy.get('input[id=lastName]').invoke('val').should('be.empty')
-        cy.wait(1000)
-        cy.log('Enter the last name')
-        cy.get('#lastName').type(obj.userlastname, { delay: 100 })
-        cy.wait(1500)
-
+Cypress.Commands.add('Testing_Last_Name_Block', (obj) => {
+    cy.wait(100)
+    cy.log('**checking field name**')
+    cy.get('#lname').should('have.text', obj.LastName)
+    cy.wait(100)
+    cy.log('**checking placeholder**')
+    cy.get('#lastName').invoke('attr', 'placeholder').should('contain', obj.lastnameplaceholder)
+    cy.wait(100)
+    cy.log('**checking no. of inputs**')
+    cy.get('#lastName').should('have.length', 1)
+    cy.wait(100)
+    cy.log('**checking if it is empty or not**')
+    cy.get('input[id=lastName]').invoke('val').should('be.empty')
+    cy.wait(100)
+    cy.log('Enter the last name')
+    cy.get('#lastName').type(obj.userlastname, { delay: 100 })
+    cy.wait(100)
 })
 
-Cypress.Commands.add('Testing_Last_Name_Block',(obj)=>{
+Cypress.Commands.add('Testing_Email_Block', (obj) => {
+    cy.wait(100)
+    cy.log('**checking field name**')
+    cy.get('#email').should('have.text', obj.Email);
+    cy.wait(100)
+    cy.log('**checking placeholder**')
+    cy.get('#emailid').invoke('attr', 'placeholder').should('contain', obj.emailplaceholder)
+    cy.wait(100)
+    cy.log('**checking no. of inputs**')
+    cy.get('#emailid').should('have.length', 1)
+    cy.wait(100)
+    cy.log('**checking if it is empty or not**')
+    cy.get('input[id=emailid]').invoke('val').should('be.empty')
+    cy.wait(100)
+    cy.log('Enter the email')
+    cy.get('#emailid').click().type(obj.emailid, { delay: 100 })
+    cy.wait(100)
+});
 
-})
+Cypress.Commands.add('Testing_Mobile_Block', (obj) => {
+    cy.wait(100)
+    cy.log('**checking field name**')
+    cy.get('#mobile').should('have.text', obj.Mobile);
+    cy.wait(100)
+    cy.log('**checking placeholder**')
+    cy.get('#mobileno').invoke('attr', 'placeholder').should('contain', obj.mobileplaceholder)
+    cy.wait(100)
+    cy.log('**checking no. of inputs**')
+    cy.get('#mobileno').should('have.length', 1)
+    cy.wait(100)
+    cy.log('**checking if it is empty or not**')
+    cy.get('input[id=mobileno]').invoke('val').should('be.empty')
+    cy.wait(100)
+    cy.log('Enter the email')
+    cy.get('#mobileno').type(obj.mobileno, { delay: 100 })
+    cy.wait(100)
+});
+
+Cypress.Commands.add('Testing_Institute_Block', (obj) => {
+    cy.wait(100)
+    cy.log('**checking field name**')
+    cy.get('#inst').should('have.text', obj.Institute);
+    cy.wait(100)
+    cy.log('**checking placeholder**')
+    cy.get('#instname').invoke('attr', 'placeholder').should('contain', obj.instplaceholder)
+    cy.wait(100)
+    cy.log('**checking no. of inputs**')
+    cy.get('#instname').should('have.length', 1)
+    cy.wait(100)
+    cy.log('**checking if it is empty or not**')
+    cy.get('input[id=instname]').invoke('val').should('be.empty')
+    cy.wait(100)
+    cy.log('Enter the email')
+    cy.get('#instname').type(obj.instname, { delay: 100 })
+    cy.wait(100)
+});
+Cypress.Commands.add('Testing_Graduation_Year', (obj) => {
+    cy.wait(100)
+    cy.log('**checking field name**')
+    cy.get('#gradyr').should('have.text', obj.Gradyr)
+    cy.wait(100)
+    cy.log('**checking inputs year**')
+    cy.get('#gradyear').find('option').then(options => {
+        const yr = [...options].map(o => o.text)
+        expect(yr).to.deep.eq([obj.selectyr1, obj.selectyr2, obj.selectyr3, obj.selectyr4])
+    })
+    cy.wait(100)
+    cy.log("Selecting graduation yrs")
+    cy.get('#gradyear').select(obj.selectyr2)
+    cy.wait(100)
+});
+Cypress.Commands.add('Testing_Project_Category_and_radio', (obj) => {
+    cy.wait(100)
+    cy.log('**checking field name**')
+    cy.get('#pcat').should('have.text', obj.Projectcat);
+    cy.wait(100)
+    cy.log('**checking category name**')
+    cy.get('.pcattype').find('label').then(options => {
+        const cat = [...options].map(o => o.innerHTML.replace(/&nbsp;/g,' '))
+        expect(cat).to.deep.eq([obj.category1, obj.category2, obj.category3])
+    })
+    cy.wait(100)
+    cy.log('**Initially checking radio button')
+    cy.get('#inpcat1').should('be.visible').should('not.be.checked')
+    cy.get('#inpcat2').should('be.visible').should('be.checked')
+    cy.get('#inpcat3').should('be.visible').should('not.be.checked')
+    cy.wait(100)
+    cy.log('Checking radio button ' + obj.category3)
+    cy.get('#inpcat3').click()
+    cy.get('#inpcat1').should('be.visible').should('not.be.checked')
+    cy.get('#inpcat2').should('be.visible').should('not.be.checked')
+    cy.get('#inpcat3').should('be.visible').should('be.checked')
+    cy.wait(100)
+});
+Cypress.Commands.add('Testing_Project_Idea_Block', (obj) => {
+    cy.wait(100)
+    cy.get('#idea').should('have.text', obj.idea);
+    cy.wait(100)
+    cy.log('**checking no. of inputs**')
+    cy.get('#cc-number').should('have.length', 1)
+    cy.wait(100)
+    cy.log('**checking if it is empty or not**')
+    cy.get('input[id=cc-number]').invoke('val').should('be.empty')
+    cy.wait(100)
+    cy.log('Enter the project idea')
+    cy.get('#cc-number').type(obj.projectidea, { delay: 100 })
+    cy.wait(100)
+});
+
+Cypress.Commands.add('Checking_Save_this_information_block', (obj) => {
+    cy.wait(100)
+    cy.get('#check').should('have.text', obj.check);
+    cy.wait(100)
+    cy.get('#save-info').click()
+    cy.wait(100)
+    cy.get('#save-info').uncheck()
+    cy.wait(100)
+});
+Cypress.Commands.add('Checking_Submit_Button', (obj) => {
+    cy.wait(100)
+    cy.get('#sub').should('have.text', obj.submit);
+    cy.wait(100)
+    cy.get('#sub').click()
+    cy.wait(100)
+});
+
