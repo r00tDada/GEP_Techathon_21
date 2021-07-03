@@ -15,7 +15,7 @@ lang.forEach((value) => {
     describe('Basic Tests for ' + value, () => {
 
         beforeEach(function () {
-            cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
+            cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunders_Pride.html")
             cy.get('#country').select(value)
             cy.fixture(value.toString().toLowerCase()).then((currentLanguage) => {
                 this.cul = currentLanguage
@@ -44,7 +44,7 @@ lang.forEach((value) => {
 
         });
         it('Testing Graduation Year', function () {
-            cy.Testing_Graduation_Year(this.cul)
+            cy.Testing_Graduation_Year_Failed(this.cul)
         });
 
         it('Testing Institute Block', function () {

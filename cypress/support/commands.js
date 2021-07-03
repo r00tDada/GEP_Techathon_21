@@ -141,6 +141,8 @@ Cypress.Commands.add('Testing_Graduation_Year', (obj) => {
     cy.get('#gradyear').select(obj.selectyr2)
     cy.wait(1000)
 });
+
+
 Cypress.Commands.add('Testing_Project_Category_and_radio', (obj) => {
     cy.wait(1000)
     cy.log('**checking field name**')
@@ -216,3 +218,18 @@ Cypress.Commands.add('Workflow_Check', (obj) => {
 });
 
 
+Cypress.Commands.add('Testing_Graduation_Year_Failed', (obj) => {
+    cy.wait(1000)
+    cy.log('**checking field name**')
+    cy.get('#gradyr').should('have.text', obj.Gradyr_failed)
+    cy.wait(1000)
+    cy.log('**checking inputs year**')
+    cy.get('#gradyear').find('option').then(options => {
+        const yr = [...options].map(o => o.text)
+        expect(yr).to.deep.eq([obj.selectyr1, obj.selectyr2, obj.selectyr3, obj.selectyr4])
+    })
+    cy.wait(1000)
+    cy.log("Selecting graduation yrs")
+    cy.get('#gradyear').select(obj.selectyr2)
+    cy.wait(1000)
+});

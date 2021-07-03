@@ -13,7 +13,7 @@ lang.forEach((value) => {
     describe('End to End Test for ' + value, () => {
 
         beforeEach(function () {
-            cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunder's%20Pride.html")
+            cy.visit("https://r00tdada.github.io/GEP_Techathon_21/web/Blunders_Pride.html")
             cy.get('#country').select(value)
             cy.fixture(value.toString().toLowerCase()).then((currentLanguage) => {
                 this.cul = currentLanguage
