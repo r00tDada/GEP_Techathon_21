@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "reporter": "mochawesome",
   "reporterOptions": {
@@ -9,6 +8,3 @@
       "timestamp": "mmddyyyy_HHMMss"
    }
 }
-=======
-{}
->>>>>>> 7f24ca022b26aaf46667970aea569bda4be3b41a
