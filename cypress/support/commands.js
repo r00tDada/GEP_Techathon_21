@@ -150,7 +150,7 @@ Cypress.Commands.add('Testing_Project_Category_and_radio', (obj) => {
     cy.wait(1000)
     cy.log('**checking category name**')
     cy.get('.pcattype').find('label').then(options => {
-        const cat = [...options].map(o => o.innerHTML.replace(/&nbsp;/g,' '))
+        const cat = [...options].map(o => o.innerHTML.replace(/&nbsp;/g, ' '))
         expect(cat).to.deep.eq([obj.category1, obj.category2, obj.category3])
     })
     cy.wait(1000)
@@ -196,13 +196,13 @@ Cypress.Commands.add('Checking_Submit_Button', (obj) => {
     cy.wait(1000)
     cy.get('#sub').click()
     cy.wait(1000)
-    cy.on('window:confirm',()=>{})
+    cy.on('window:confirm', () => { })
     cy.wait(1000)
 });
 
 Cypress.Commands.add('Workflow_Check', (obj) => {
     cy.wait(1000)
-    cy.get('#pagetype').should('have.text',obj.pageType)
+    cy.get('#pagetype').should('have.text', obj.pageType)
     cy.get('#firstName').type(obj.userfirstname)
     cy.get('#lastName').type(obj.userlastname)
     cy.get('#emailid').type(obj.emailid)
@@ -213,23 +213,21 @@ Cypress.Commands.add('Workflow_Check', (obj) => {
     cy.get('#cc-number').type(obj.projectidea)
     cy.get('#save-info').click()
     cy.get('#sub').click()
-    cy.on('window:confirm',()=>{})
+    cy.on('window:confirm', () => { })
     cy.wait(1000)
 });
 
-
-Cypress.Commands.add('Testing_Graduation_Year_Failed', (obj) => {
+Cypress.Commands.add('Testing_Project_Idea_Block_failed', (obj) => {
     cy.wait(1000)
-    cy.log('**checking field name**')
-    cy.get('#gradyr').should('have.text', obj.Gradyr_failed)
+    cy.get('#idea').should('have.text', obj.idea_failed);
     cy.wait(1000)
-    cy.log('**checking inputs year**')
-    cy.get('#gradyear').find('option').then(options => {
-        const yr = [...options].map(o => o.text)
-        expect(yr).to.deep.eq([obj.selectyr1, obj.selectyr2, obj.selectyr3, obj.selectyr4])
-    })
+    cy.log('**checking no. of inputs**')
+    cy.get('#cc-number').should('have.length', 1)
     cy.wait(1000)
-    cy.log("Selecting graduation yrs")
-    cy.get('#gradyear').select(obj.selectyr2)
+    cy.log('**checking if it is empty or not**')
+    cy.get('input[id=cc-number]').invoke('val').should('be.empty')
+    cy.wait(1000)
+    cy.log('Enter the project idea')
+    cy.get('#cc-number').type(obj.projectidea)
     cy.wait(1000)
 });

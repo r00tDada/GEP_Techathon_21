@@ -49,7 +49,7 @@ lang.forEach((value) => {
             cy.Testing_Project_Category_and_radio(this.cul)
         });
         it('Testing Project Idea Block', function () {
-            cy.Testing_Project_Idea_Block(this.cul)
+            cy.Testing_Project_Idea_Block_failed(this.cul)
         });
         it('Checking Save this information block', function () {
             cy.Checking_Save_this_information_block(this.cul)
