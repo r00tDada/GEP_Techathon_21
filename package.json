@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test1":"npx cypress run --spec 'cypress/integration/End-End/Test.js' --config videoUploadOnPasses=false"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "homepage": "https://github.com/r00tDada/GEP_Techathon_21#readme",
   "dependencies": {
     "cypress": "^7.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.1",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
   }
 }
