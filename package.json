@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/r00tDada/GEP_Techathon_21#readme",
   "dependencies": {
+    "cli-table3": "^0.6.0",
     "cypress": "^7.6.0"
   },
   "devDependencies": {
